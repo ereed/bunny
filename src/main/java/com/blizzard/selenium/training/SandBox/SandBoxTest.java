@@ -9,7 +9,7 @@ package com.blizzard.selenium.training.SandBox;
  */
 public class SandBoxTest {
 
-    public static void main( String[] args ) {
+    public static void main(String[] args) {
 
         // Create Web Driver Instance.
 
@@ -19,10 +19,6 @@ public class SandBoxTest {
 
         // Click the very first product on the page. "World of Warcraft: Warlords of Draenor".
 
-        // Locate and
-
-        // Locate the active breadcrumb element and assign it to a variable.
-
-        // Verify the active breadcrumb element is "Warlords
+        // Locate the standard edition price and verify it displays 49.99.
     }
 }
