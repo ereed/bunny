@@ -1,10 +1,15 @@
 package com.blizzard.selenium.training;
 
 import org.junit.Test;
+import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.remote.RemoteWebDriver;
 
+import com.blizzard.selenium.training.BusinessObjects.Shop;
+
 import java.net.URL;
+
+import junit.framework.Assert;
 
 /**
  *
@@ -13,29 +18,32 @@ public class TestGrid {
 
     String selhub = "http://localhost:4444/wd/hub";
     String targetServer = "http://us.battle.net/shop";
+    RemoteWebDriver driver;
 
     @Test // Test FireFox
     public void testFox() throws Exception {
         DesiredCapabilities browser = DesiredCapabilities.firefox();
-        openAndClose(browser);
+        runTests(browser);
     }
 
     @Test // Test Chrome
     public void testChrome() throws Exception {
         DesiredCapabilities browser = DesiredCapabilities.chrome();
-        openAndClose(browser);
+        runTests(browser);
     }
 
     @Test // Test Internet Explorer
     public void testIE() throws Exception {
         DesiredCapabilities browser = DesiredCapabilities.internetExplorer();
-        openAndClose(browser);
+        runTests(browser);
     }
 
-    public void openAndClose (DesiredCapabilities browser) throws Exception{
+    public void runTests (DesiredCapabilities browser) throws Exception{
         RemoteWebDriver driver = new RemoteWebDriver(new URL(selhub), browser);
-        driver.get(targetServer + "/en/product/game/diablo");
+        Shop shop = new Shop(driver);
+        Assert.assertTrue(shop.verifyStandardPrice());
         Thread.sleep(2000);
         driver.quit();
+
     }
 }

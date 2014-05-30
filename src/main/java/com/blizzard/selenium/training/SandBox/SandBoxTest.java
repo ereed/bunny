@@ -1,5 +1,19 @@
 package com.blizzard.selenium.training.SandBox;
 
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By.ByCssSelector;
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.support.PageFactory;
+
+import com.blizzard.selenium.training.BusinessObjects.Shop;
+import com.blizzard.selenium.training.PageObjects.BrowsePage;
+import com.blizzard.selenium.training.PageObjects.HomePage;
+import com.blizzard.selenium.training.PageObjects.ProductDetailsPage;
+
 /**
  * http://docs.seleniumhq.org/docs/03_webdriver.jsp
  * http://docs.seleniumhq.org/docs/04_webdriver_advanced.jsp
@@ -9,16 +23,21 @@ package com.blizzard.selenium.training.SandBox;
  */
 public class SandBoxTest {
 
-    public static void main(String[] args) {
 
-        // Create Web Driver Instance.
+	public static void main(String[] args) {
+		WebDriver driver = new FirefoxDriver();
+		final Shop shop = new Shop(driver);
+		
+		if(shop.verifyStandardPrice() == true) {
+			System.out.println("pass");
+			driver.quit();
+		}
+		else
+		{
+			System.out.println("fail");
+			driver.quit();
+		}
+		
+	}
 
-        // Navigate to shop home page.
-
-        // locate the World of Warcraft products link and click it.
-
-        // Click the very first product on the page. "World of Warcraft: Warlords of Draenor".
-
-        // Locate the standard edition price and verify it displays 49.99.
-    }
-}
+	}  
