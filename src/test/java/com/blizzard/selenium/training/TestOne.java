@@ -25,6 +25,6 @@ public class TestOne {
     @Test
     public void testStuff(){
         // perform some sort of test
-        // Use Assert.assertTrue(Expression) to verify something.
+        // Use Assert.assertTrue(Expression) to verify true/false results.
     }
 }
