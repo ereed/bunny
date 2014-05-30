@@ -7,7 +7,7 @@ import org.openqa.selenium.remote.RemoteWebDriver;
 import java.net.URL;
 
 /**
- * Created by Devin Webster on 5/29/2014.
+ *
  */
 public class TestGrid {
 

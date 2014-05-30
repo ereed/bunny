@@ -1,7 +1,7 @@
 package com.blizzard.selenium.training.BusinessObjects;
 
 /**
- * Created by DWebster on 5/29/2014.
+ *
  * Summary: Business objects is a java classes where methods / functions are stored.
  *          These objects will then be later called by the main test object to be executed.
  *          Business objects will be calling upon the page objects for retrieving the data.
